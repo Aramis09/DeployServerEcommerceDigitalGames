@@ -131,9 +131,9 @@ const notificationData = async (query)  => {
                 ProductId: productData.id,
                 UserEmail: userMailFromDescription,
             };
-            await axios.post(`http://localhost:3001/purchase/create`, {transactionDataObject})
+            await axios.post(`https://server-ecommerce-digital-games.onrender.com/purchase/create`, {transactionDataObject})
         })
-        await axios.get(`http://localhost:3001/user/removeProductInShoppingCart?email=${userMailFromDescription}&idProduct=${'all'}`)
+        await axios.get(`https://server-ecommerce-digital-games.onrender.com/user/removeProductInShoppingCart?email=${userMailFromDescription}&idProduct=${'all'}`)
         mailProductsToBuyer(userMailFromDescription, merchantOrder.body.items);
         
     } else {
